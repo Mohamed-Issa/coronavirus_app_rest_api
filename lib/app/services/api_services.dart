@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:coronavirus_rest_api/app/services/api.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 class APIServices {
@@ -42,9 +42,7 @@ class APIServices {
         final Map<String, dynamic> endPointData = data[0];
         final String responseJsonKey = _responseJsonKeys[endpoint];
         final int result = endPointData[responseJsonKey];
-        if (result != null) {
-          return result;
-        }
+        return result;
       }
     }
     print(
