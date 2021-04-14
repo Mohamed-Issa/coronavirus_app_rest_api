@@ -1,0 +1,13 @@
+{
+    "rest-client.environmentVariables": {
+    
+        "sandbox": {
+           "baseUrl" : "https://ncov2019-admin.firebaseapp.com",
+           "authorization" : "3dd214350c8c03593f0bfeced30a014415d6693fcb34183d43468c17113254e1",
+           "accessToken" : "54de2f35a3d949cc115634fe2a1c06b2ec17d7e0a04ced9f7e25272f5239eabd",
+        },
+        "production": {
+            
+        }
+    }
+}
