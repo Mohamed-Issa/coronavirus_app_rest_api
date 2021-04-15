@@ -1,6 +1,7 @@
 import 'package:coronavirus_rest_api/app/repositories/endpoins_data.dart';
 import 'package:coronavirus_rest_api/app/services/api.dart';
 import 'package:coronavirus_rest_api/app/services/api_services.dart';
+import 'package:coronavirus_rest_api/app/services/endpoint_data.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
 
@@ -12,7 +13,7 @@ class DataRepository {
   // ignore: invalid_required_positional_param
   DataRepository({@required this.apiServices});
 
-  Future<int> getEndPointData(Endpoint endpoint) async {
+  Future<EndPointData> getEndPointData(Endpoint endpoint) async {
     /* try {
       if (_accessToken == null) {
         _accessToken = await apiServices.getAccessToken();
@@ -25,7 +26,7 @@ class DataRepository {
       }
       rethrow;
     }*/
-    return await _getDataRefreshingToken<int>(
+    return await _getDataRefreshingToken<EndPointData>(
         onGetData: () => apiServices.getEndPointData(_accessToken, endpoint));
   }
 

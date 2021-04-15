@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:coronavirus_rest_api/app/services/api.dart';
+import 'package:coronavirus_rest_api/app/services/endpoint_data.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
@@ -27,7 +28,7 @@ class APIServices {
     throw response;
   }
 
-  Future<int> getEndPointData(
+  Future<EndPointData> getEndPointData(
     // ignore: invalid_required_positional_param
     @required String accessToken,
     // ignore: invalid_required_positional_param
@@ -41,8 +42,10 @@ class APIServices {
       if (data.isNotEmpty) {
         final Map<String, dynamic> endPointData = data[0];
         final String responseJsonKey = _responseJsonKeys[endpoint];
-        final int result = endPointData[responseJsonKey];
-        return result;
+        final int value = endPointData[responseJsonKey];
+        final String dateString = endPointData['date'];
+        final date = DateTime.tryParse(dateString);
+        return EndPointData(value: value, date: date);
       }
     }
     print(

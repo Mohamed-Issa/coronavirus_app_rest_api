@@ -3,9 +3,13 @@ import 'package:coronavirus_rest_api/app/services/api.dart';
 import 'package:coronavirus_rest_api/app/services/api_services.dart';
 import 'package:coronavirus_rest_api/app/ui/dashboard.dart';
 import 'package:flutter/material.dart';
+//import 'package:intl/date_symbol_data_file.dart';
 import 'package:provider/provider.dart';
+//import 'package:intl/intl.dart';
 
 void main() {
+  // Intl.defaultLocale = 'en_GB';
+  // await initializeDateFormatting();
   runApp(MyApp());
 }
 
